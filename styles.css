@@ -1,0 +1,139 @@
+/* พื้นหลัง */
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffc0cb; /* สีชมพูอ่อน */
+    color: white;
+    overflow: hidden;
+}
+
+article {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .fade-in {
+        font-size: 36px;
+    }
+}
+
+/* เอฟเฟกต์หัวข้อ */
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* สไตล์บอร์ดเกม */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* สไตล์การ์ด */
+.card {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+}
+
+/* เอฟเฟกต์เมื่อกดการ์ด */
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* แอนิเมชันการ์ดเปิดแบบ 3D */
+.flipped {
+    animation: flip 0.6s ease-in-out;
+}
+
+/* เอฟเฟกต์หัวใจลอยขึ้น */
+.heart {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    opacity: 0.8;
+    animation: floatHeart 3s ease-out forwards;
+}
+
+/* เอฟเฟกต์ fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* เอฟเฟกต์การ์ดเปิดแบบ 3D */
+@keyframes flip {
+    0% { transform: rotateY(0); }
+    50% { transform: rotateY(90deg); }
+    100% { transform: rotateY(0); }
+}
+
+/* เอฟเฟกต์หัวใจลอยขึ้น */
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-250px) scale(1.5); opacity: 0; }
+}
+
+/* เอฟเฟกต์หน้าเซอร์ไพรส์ */
+.surprise-container {
+    margin-top: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+    transform: scale(0.9);
+}
+/* สไตล์หน้า countdown */
+.countdown-container {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* เอฟเฟกต์ตัวเลข */
+#countdown span {
+    display: inline-block;
+    min-width: 60px;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+#countdown span:hover {
+    transform: scale(1.1);
+}
+/* สไตล์ปุ่มถัดไป */
+.next-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff66b2; /* ชมพูสดใส */
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.next-button:hover {
+    background-color: #ff3385;
+    transform: scale(1.1);
+}
