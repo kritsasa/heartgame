@@ -7,18 +7,6 @@ body {
     overflow: hidden;
 }
 
-article {
-    max-width: 200px;
-    padding: 20px;
-    margin: 0 auto;
-}
-
-@media (max-width: 200px) {
-    h1 {
-        font-size: 10px;
-    }
-}
-
 /* เอฟเฟกต์หัวข้อ */
 h1 {
     font-size: 2.5em;
@@ -56,11 +44,6 @@ h1 {
     transform: scale(1.1);
 }
 
-/* แอนิเมชันการ์ดเปิดแบบ 3D */
-.flipped {
-    animation: flip 0.6s ease-in-out;
-}
-
 /* เอฟเฟกต์หัวใจลอยขึ้น */
 .heart {
     position: absolute;
@@ -76,13 +59,6 @@ h1 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* เอฟเฟกต์การ์ดเปิดแบบ 3D */
-@keyframes flip {
-    0% { transform: rotateY(0); }
-    50% { transform: rotateY(90deg); }
-    100% { transform: rotateY(0); }
-}
-
 /* เอฟเฟกต์หัวใจลอยขึ้น */
 @keyframes floatHeart {
     0% { transform: translateY(0) scale(1); opacity: 1; }
@@ -95,6 +71,7 @@ h1 {
     animation: fadeIn 1.5s ease-in-out;
     transform: scale(0.9);
 }
+
 /* สไตล์หน้า countdown */
 .countdown-container {
     text-align: center;
@@ -119,6 +96,7 @@ h1 {
 #countdown span:hover {
     transform: scale(1.1);
 }
+
 /* สไตล์ปุ่มถัดไป */
 .next-button {
     display: inline-block;
@@ -136,4 +114,110 @@ h1 {
 .next-button:hover {
     background-color: #ff3385;
     transform: scale(1.1);
+}
+
+/* ปรับขนาดบอร์ดเกม & การ์ดให้เล็กลงเมื่อจอเล็ก */
+@media (max-width: 768px) {
+    #game-board {
+        grid-template-columns: repeat(4, 90px);
+        gap: 8px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+    .countdown-container {
+        font-size: 1.5em;
+    }
+
+    #countdown span {
+        min-width: 50px;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .next-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-board {
+        grid-template-columns: repeat(4, 70px);
+        gap: 5px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+    .countdown-container {
+        font-size: 1.2em;
+    }
+
+    #countdown span {
+        min-width: 45px;
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    .next-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    #game-board {
+        grid-template-columns: repeat(4, 60px);
+        gap: 3px;
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+    .countdown-container {
+        font-size: 1em;
+    }
+
+    #countdown span {
+        min-width: 40px;
+        padding: 5px;
+        font-size: 0.7em;
+    }
+
+    .next-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
 }
